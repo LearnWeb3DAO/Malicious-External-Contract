@@ -1,23 +1,14 @@
-# Malicious External contracts
+# Malicious External Contracts
 
 In crypto world, you will often hear about how contracts which looked legitimate were the reason behind a big scam. How are hackers able to execute a malicious smart contract from a legitimate contract?
 
-
 We will learn one method today 👀
 
-
-
 ## What will happen?
-
 
 There will be three contracts - `Attack.sol`, `Helper.sol` and `Good.sol`. User will be able to enter an eligibility list using `Good.sol` which will further call `Helper.sol` to keep track of all the users which are eligible.
 
 `Attack.sol` will be designed in such a way that eligibility list can be manipulated, lets see how 👀
-
-
-
-## Build
-
 
 ## Build
 
@@ -28,6 +19,11 @@ Lets build an example where you can experience how the attack happens.
   ```bash
   npm init --yes
   npm install --save-dev hardhat
+  ```
+- If you are on Windows, please do this extra step and install these libraries as well :)
+
+  ```bash
+  npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
   ```
 
 - In the same directory where you installed Hardhat run:
@@ -41,15 +37,7 @@ Lets build an example where you can experience how the attack happens.
   - Press enter for the question on if you want to add a `.gitignore`
   - Press enter for `Do you want to install this sample project's dependencies with npm (@nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers)?`
 
-Now you have a hardhat project ready to go!
-
-If you are not on mac, please do this extra step and install these libraries as well :)
-
-```bash
-npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
-```
-
-and press `enter` for all the questions.
+Now you have a Hardhat project ready to go!
 
 Start by creating a new file inside the `contracts` directory called `Good.sol`
 
@@ -97,7 +85,6 @@ contract Helper {
     fallback() external {}
 }
 ```
-
 
 The last contract that we will create inside the `contracts` directory is `Attack.sol`
 
