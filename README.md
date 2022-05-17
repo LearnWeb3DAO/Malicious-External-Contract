@@ -122,7 +122,7 @@ Now because `Attack.sol` can be typecasted as `Helper.sol`, a malicious owner ca
 
 In our case, the scam will happen as follows. The scammer will first deploy `Good.sol` with the address of `Attack.sol`. Then when the user will enter the eligibility list using `addUserToList` function which will work fine because the code for this function is same within `Helper.sol` and `Attack.sol`.
 
-The true colours will be observed when the user will try to call `isUserEligible` with his address because now this function will always return `false`  because it calls `Attack.sol`'s `isUserEligible` function which always returns `false` expect when its the owner itself, which was not supposed to happen.
+The true colours will be observed when the user will try to call `isUserEligible` with his address because now this function will always return `false`  because it calls `Attack.sol`'s `isUserEligible` function which always returns `false` except when its the owner itself, which was not supposed to happen.
 
 
 Lets try to write a test and see if this scam actually works, create a new file inside the `test` folder named `attack.js`
