@@ -1,6 +1,6 @@
 # Malicious External Contracts
 
-In crypto world, you will often hear about how contracts which looked legitimate were the reason behind a big scam. How are hackers able to execute a malicious smart contract from a legitimate contract?
+In crypto world, you will often hear about how contracts which looked legitimate were the reason behind a big scam. How are hackers able to execute malicious code from a legitimate looking contract?
 
 We will learn one method today 👀
 
@@ -168,17 +168,17 @@ To run this test, open up your terminal pointing to the root of the directory fo
 npx hardhat test
 ```
 
-If all your tests passed, this means that the scam was successfull and that the user will never be determined eligible 
+If all your tests passed, this means that the scam was successful and that the user will never be determined eligible 
 
 
 ## Prevention
 
 Make the address of the external contract public and also get your external contract verified so that all users can view the code
 
-Create a new contract, instead of typecasting an address into a contract inside the contuctor. So instead of doing `Helper(_helper)`  where you are typecasting `_helper` address into a contract which may or may not be the `Helper` contract, create an explicit new helper contract instance using `new Helper()`.
+Create a new contract, instead of typecasting an address into a contract inside the constructor. So instead of doing `Helper(_helper)`  where you are typecasting `_helper` address into a contract which may or may not be the `Helper` contract, create an explicit new helper contract instance using `new Helper()`.
 
 Example
-```solidity=
+```solidity
 contract Good {
     Helper public helper;
     constructor() {
@@ -186,8 +186,11 @@ contract Good {
     }
 ```
 
-
+<Quiz questionId="4e4b7aa2-7d27-4f2d-b66f-d2a3a04adb27" />
+<Quiz questionId="d7194a5e-fe17-420f-8dc8-1789665d0fe5" />
 
 Wow, lots of learning right? 🤯 
 
-Beaware of scammers, super shadowy coders are smart.
+Beaware of scammers, you might need to double check the code of a new dApp you want to put money in.
+
+<SubmitQuiz />
