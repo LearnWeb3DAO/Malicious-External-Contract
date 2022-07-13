@@ -16,7 +16,7 @@ describe("Attack", function () {
       value: ethers.utils.parseEther("3"),
     });
     await _goodContract.deployed();
-    console.log("Good Contract's Address:", _attackContract.address);
+    console.log("Good Contract's Address:", _goodContract.address);
 
     const [_, addr1] = await ethers.getSigners();
     // Now lets add an address to the eligibility list
